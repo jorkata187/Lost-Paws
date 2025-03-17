@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 export default function Header() {
     return (
         <div className="banner-background">
@@ -15,7 +17,7 @@ export default function Header() {
                             </div>
                             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul className="nav navbar-nav">
-                                    <li><a href="index.html">HOME <span className="sr-only">(current)</span></a></li>
+                                    <li><Link to="/">HOME <span className="sr-only">(current)</span></Link></li>
                                     <li><a href="about.html">ABOUT</a></li>
                                     <li className="dropdown">
                                         <a href="gallery.html" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GALLERY<span className="caret"></span></a>
