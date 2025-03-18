@@ -18,18 +18,19 @@ export default function Header() {
                             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul className="nav navbar-nav">
                                     <li><Link to="/">HOME <span className="sr-only">(current)</span></Link></li>
-                                    <li><a href="about.html">ABOUT</a></li>
+                                    <li><Link to="/about">ABOUT</Link></li>
                                     <li className="dropdown">
-                                        <a href="gallery.html" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GALLERY<span className="caret"></span></a>
+                                        <Link to="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PAWS<span className="caret"></span></Link>
                                         <ul className="dropdown-menu">
-                                            <li><a href="gallery.html">Action</a></li>
-                                            <li><a href="gallery.html">Another action</a></li>
-                                            <li><a href="gallery.html">Something else here</a></li>
+                                            <li><Link to="#">Action</Link></li>
+                                            <li><Link to="#">Another action</Link></li>
+                                            <li><Link to="#">Something else here</Link></li>
                                         </ul>
                                     </li>
-                                    <li><a href="pages.html">PAGES</a></li>
-                                    <li><a href="404.html " className="active">BLOG</a></li>
-                                    <li><a href="contact.html">CONTACT</a></li>
+                                    <li><Link to="/posts/create">CREATE POST</Link></li>
+                                    <li><Link to="/login">LOGIN</Link></li>
+                                    <li><Link to="/register">REGISTER</Link></li>
+                                    <li><Link to="/logout">LOGOUT</Link></li>
                                 </ul>
                             </div>
                             <div className="clearfix"></div>
@@ -38,7 +39,7 @@ export default function Header() {
                         <div className="clearfix"></div>
                     </div>
                     <div className="logo">
-                        <h1><a href="index.html">PET<span className="hlf"> KENNEL</span></a></h1>
+                        <h1><Link to="/">LOST<span className="hlf"> PAWS</span></Link></h1>
                     </div>
                 </div>
             </div>
