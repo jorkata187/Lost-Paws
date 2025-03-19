@@ -1,4 +1,5 @@
-import { Link } from 'react-router'
+import { Link } from 'react-router';
+
 export default function Login() {
     return (
         <section id="login-page" className="auth">

@@ -9,6 +9,17 @@
     box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
 }
 
+#register-page {
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ca7272;
+    box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+}
+
 .container {
     padding: 40px;
 }
