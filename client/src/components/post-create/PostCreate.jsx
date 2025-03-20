@@ -19,7 +19,7 @@ export default function PostCreate() {
 
                     <label htmlFor="summary">Summary:</label>
                     <textarea name="summary" id="summary"></textarea>
-                    <input className="btn submit" type="submit" value="Create Game" />
+                    <input className="btn submit" type="submit" value="Create Post" />
                 </div>
             </form>
         </section>
