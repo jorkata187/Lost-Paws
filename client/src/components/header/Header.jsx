@@ -22,7 +22,7 @@ export default function Header() {
                                     <li className="dropdown">
                                         <Link to="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PAWS<span className="caret"></span></Link>
                                         <ul className="dropdown-menu">
-                                            <li><Link to="#">Action</Link></li>
+                                            <li><Link to="/paws">Action</Link></li>
                                             <li><Link to="#">Another action</Link></li>
                                             <li><Link to="#">Something else here</Link></li>
                                         </ul>

@@ -212,12 +212,14 @@ textarea {
     margin-top: 5px;
     font-size: 36px;
     font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .game_header>h4 {
     color: #555;
     font-size: 23px;
     font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .levels {
@@ -262,6 +264,7 @@ textarea {
 .text {
     font-size: 25px;
     color: #545454;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .movie_social {
@@ -285,7 +288,7 @@ textarea {
 
 .button {
     height: 15%;
-    background-color: #54557b;
+    background-color: #e06e6e;
     padding: 14px;
     margin-top: auto;
     font-size: 21px;
@@ -294,7 +297,7 @@ textarea {
 }
 
 .button:hover {
-    background-color: #6f5d9c;
+    background-color: #d15c5c;
     color: white;
 }
 
