@@ -13,9 +13,17 @@ export default function PawsEdit() {
             .then(setPaw);
     }, [pawId]);
 
+    const formAction = async (formData) => {
+        const pawData = Object.fromEntries(formData);
+
+        await pawService.edit(pawId, pawData);
+
+        navigate(`/paws/${pawId}/details`);
+    }
+
     return (
         <section id="edit-page" className="auth">
-            <form id="edit">
+            <form id="edit" action={formAction}>
                 <div className="container">
 
                     <h1>Edit Post</h1>

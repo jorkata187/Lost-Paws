@@ -14,8 +14,11 @@ export default {
     getOne(pawId) {
         return request.get(`${baseUrl}/${pawId}`);
     },
-     create(pawData) {
+    create(pawData) {
         return request.post(baseUrl, pawData);
+    },
+    edit(pawId, pawData) {
+        return request.put(`${baseUrl}/${pawId}`, { ...pawData, _id: pawId });
     },
     delete(pawId) {
         return request.delete(`${baseUrl}/${pawId}`);
