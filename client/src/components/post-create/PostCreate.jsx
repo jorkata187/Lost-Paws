@@ -1,18 +1,32 @@
+import { useNavigate } from "react-router";
+
+import petService from "../../services/petService";
+
 export default function PostCreate() {
+    const navigate = useNavigate();
+
+    const submitAction = async (formData) => {
+        const petData = Object.fromEntries(formData);
+
+        await petService.create(petData);
+
+        navigate('/paws');
+    }
+
     return (
         <section id="create-page" className="auth">
-            <form id="create">
+            <form id="create" action={submitAction}>
                 <div className="container">
 
                     <h1>Create Post</h1>
                     <label htmlFor="leg-title">Pet Name:</label>
-                    <input type="text" id="title" name="title" placeholder="Your pet name..." />
+                    <input type="text" id="title" name="name" placeholder="Your pet name..." />
 
                     <label htmlFor="category">Breed:</label>
-                    <input type="text" id="category" name="category" placeholder="Breed..." />
+                    <input type="text" id="category" name="breed" placeholder="Breed..." />
 
                     <label htmlFor="levels">Age:</label>
-                    <input type="text" id="maxLevel" name="maxLevel" placeholder="Age..." />
+                    <input type="text" id="maxLevel" name="age" placeholder="Age..." />
 
                     <label htmlFor="game-img">Image:</label>
                     <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />

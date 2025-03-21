@@ -1,4 +1,15 @@
+import { useEffect, useState } from "react";
+
+import petService from "../../services/petService";
+
 export default function PawsList() {
+    const [pets, setPets] = useState([]);
+
+    useEffect(() => {
+        petService.getAll()
+            .then(setPets)
+    }, []);
+
    return (
         <div className="our-products">
         <div className="container">
