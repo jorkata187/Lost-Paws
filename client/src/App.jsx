@@ -24,7 +24,7 @@ function App() {
 				<Route path='/register' element={<Register />} />
 				<Route path='/paws/create' element={<PawsCreate />} />
 				<Route path='/paws/:pawId/details' element={<PawsDetails />} />
-				<Route path='/paws/edit' element={<PawsEdit />} />
+				<Route path='/paws/:pawId/edit' element={<PawsEdit />} />
 				<Route path='/paws' element={<PawsList />} />
 			</Routes>
 
