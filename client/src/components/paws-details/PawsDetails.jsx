@@ -17,7 +17,7 @@ export default function PawsDetails() {
 
         {/* <!-- Edit/Delete buttons ( Only for creator of this post )  --> */}
         <div className="buttons">
-            <Link to="/posts/edit" className="button">Edit</Link>
+            <Link to="/paws/edit" className="button">Edit</Link>
             <Link className="button">
                 Delete
             </Link>

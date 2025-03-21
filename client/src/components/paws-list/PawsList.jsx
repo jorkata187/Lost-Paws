@@ -6,11 +6,11 @@ import PawListItem from "./paw-list-item/PawListItem";
 import pawService from "../../services/pawService";
 
 export default function PawsList() {
-    const [pets, setPets] = useState([]);
+    const [paws, setPaws] = useState([]);
 
     useEffect(() => {
         pawService.getAll()
-            .then(setPets)
+            .then(setPaws)
     }, []);
     
    return (
@@ -19,8 +19,11 @@ export default function PawsList() {
             <div className="products-gallery">
                 <h2>MISSING PAWS</h2>
 
-               {pets.map(pet => <PawListItem key={pet._id} {...pet} />)}
-            
+            {paws.length > 0
+                ?  paws.map(paw => <PawListItem key={paw._id} {...paw} />)
+                : <h3 className="empty-list">Empty list of Paws</h3>
+            }
+
                 <div className="clearfix"></div>
             </div>
         </div>

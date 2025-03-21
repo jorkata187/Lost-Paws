@@ -7,11 +7,11 @@ export default {
     async getAll() {
         const result = await request.get(baseUrl);
 
-        const pets = Object.values(result);
+        const paws = Object.values(result);
 
-        return pets;
+        return paws;
     },
-     create(petData) {
-        return request.post(baseUrl, petData);
+     create(pawData) {
+        return request.post(baseUrl, pawData);
     },
 };
