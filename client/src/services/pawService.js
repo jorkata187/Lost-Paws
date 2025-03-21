@@ -17,4 +17,7 @@ export default {
      create(pawData) {
         return request.post(baseUrl, pawData);
     },
+    delete(pawId) {
+        return request.delete(`${baseUrl}/${pawId}`);
+    },
 };

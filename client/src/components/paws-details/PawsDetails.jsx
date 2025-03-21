@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 
 import pawService from "../../services/pawService";
 
 export default function PawsDetails() {
+    const navigate = useNavigate();
     const [paw, setPaw] = useState({});
     const { pawId } = useParams();
 
@@ -11,6 +12,17 @@ export default function PawsDetails() {
         pawService.getOne(pawId)
             .then(setPaw)
     }, [pawId]);
+
+    const onDelete = async () => {
+        const hasConfirm = confirm(`Are you sure want to delete ${paw.name}`);
+
+        if (!hasConfirm) {
+            return;
+        }
+        await pawService.delete(pawId);
+        
+        navigate('/paws');
+    };
 
     return (
         <section id="game-details">
@@ -29,9 +41,12 @@ export default function PawsDetails() {
                 {/* <!-- Edit/Delete buttons ( Only for creator of this post )  --> */}
                 <div className="buttons">
                     <Link to="/paws/edit" className="button">Edit</Link>
-                    <Link className="button">
+                    <button 
+                    onClick={onDelete}
+                    className="button"
+                    >
                         Delete
-                    </Link>
+                    </button>
                 </div>
             </div>
         </section>
