@@ -16,7 +16,7 @@ export default function PawListItem({
                     <h3>{name}</h3>
                     <p>Age: {age} years old</p>
                     <p>Breed: {breed}</p>
-                    <p><Link to="/paws/{_id}/details" className="btn btn-danger" role="button">Details</Link></p>
+                    <p><Link to={`/paws/${_id}/details`} className="btn btn-danger" role="button">Details</Link></p>
                 </div>
             </div>
         </div>

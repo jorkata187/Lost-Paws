@@ -1,28 +1,39 @@
-import { Link } from "react-router";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router";
+
+import pawService from "../../services/pawService";
 
 export default function PawsDetails() {
-   return (
-    <section id="game-details">
-    <h1>Pet Details</h1>
-    <div className="info-section">
+    const [paw, setPaw] = useState({});
+    const { pawId } = useParams();
 
-        <div className="game-header">
-            <img className="game-img" src="" />
-            <h1>pet</h1>
-            <span className="levels">pet</span>
-            <p className="type">pet</p>
-        </div>
+    useEffect(() => {
+        pawService.getOne(pawId)
+            .then(setPaw)
+    }, [pawId]);
 
-        <p className="text">pet</p>
+    return (
+        <section id="game-details">
+            <h1>Pet Details</h1>
+            <div className="info-section">
 
-        {/* <!-- Edit/Delete buttons ( Only for creator of this post )  --> */}
-        <div className="buttons">
-            <Link to="/paws/edit" className="button">Edit</Link>
-            <Link className="button">
-                Delete
-            </Link>
-        </div>
-    </div>
-</section>
+                <div className="game-header">
+                    <img className="game-img" src={paw.imageUrl} />
+                    <h1>{paw.name}</h1>
+                    <span className="levels">Age: {paw.age} years old</span>
+                    <p className="type">Breed: {paw.breed}</p>
+                </div>
+
+                <p className="text">{paw.summary}</p>
+
+                {/* <!-- Edit/Delete buttons ( Only for creator of this post )  --> */}
+                <div className="buttons">
+                    <Link to="/paws/edit" className="button">Edit</Link>
+                    <Link className="button">
+                        Delete
+                    </Link>
+                </div>
+            </div>
+        </section>
     );
 }

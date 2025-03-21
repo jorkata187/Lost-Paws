@@ -11,6 +11,9 @@ export default {
 
         return paws;
     },
+    getOne(pawId) {
+        return request.get(`${baseUrl}/${pawId}`);
+    },
      create(pawData) {
         return request.post(baseUrl, pawData);
     },
