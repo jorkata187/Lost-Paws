@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 
-import petService from "../../services/petService";
+import petService from "../../services/pawService";
 
-export default function PostCreate() {
+export default function PawsCreate() {
     const navigate = useNavigate();
 
     const submitAction = async (formData) => {

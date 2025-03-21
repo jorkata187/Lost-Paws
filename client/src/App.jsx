@@ -7,9 +7,9 @@ import Header from './components/header/Header'
 import Home from './components/home/Home'
 import Login from './components/login/Login'
 import Register from './components/register/Register'
-import PostCreate from './components/post-create/PostCreate'
-import PostEdit from './components/post-edit/PostEdit'
-import PostDetails from './components/post-details/PostDetails'
+import PawsCreate from './components/paws-create/PawsCreate'
+import PawsEdit from './components/paws-edit/PawsEdit'
+import PawsDetails from './components/paws-details/PawsDetails'
 import PawsList from './components/paws-list/PawsList'
 
 function App() {
@@ -22,9 +22,9 @@ function App() {
 				<Route path='/' element={<Home />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Register />} />
-				<Route path='/posts/create' element={<PostCreate />} />
-				<Route path='/posts/edit' element={<PostEdit />} />
-				<Route path='/posts/details' element={<PostDetails />} />
+				<Route path='/paws/create' element={<PawsCreate />} />
+				<Route path='/paws/edit' element={<PawsEdit />} />
+				<Route path='/paws/details' element={<PawsDetails />} />
 				<Route path='/paws' element={<PawsList />} />
 			</Routes>
 

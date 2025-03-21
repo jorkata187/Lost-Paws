@@ -27,7 +27,7 @@ export default function Header() {
                                             <li><Link to="#">Something else here</Link></li>
                                         </ul>
                                     </li>
-                                    <li><Link to="/posts/create">CREATE POST</Link></li>
+                                    <li><Link to="/paws/create">CREATE POST</Link></li>
                                     <li><Link to="/login">LOGIN</Link></li>
                                     <li><Link to="/register">REGISTER</Link></li>
                                     <li><Link to="/logout">LOGOUT</Link></li>

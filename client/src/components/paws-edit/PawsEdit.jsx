@@ -1,4 +1,4 @@
-export default function PostEdit() {
+export default function PawsEdit() {
     return (
         <section id="edit-page" className="auth">
             <form id="edit">

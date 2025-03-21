@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function PostDetails() {
+export default function PawsDetails() {
    return (
     <section id="game-details">
     <h1>Pet Details</h1>
