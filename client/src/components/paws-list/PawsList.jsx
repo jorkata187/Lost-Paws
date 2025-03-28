@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react";
-
-import petService from "../../services/pawService";
-
 import PawListItem from "./paw-list-item/PawListItem";
-import pawService from "../../services/pawService";
+import useFetch from "../../hooks/useFetch";
 
 export default function PawsList() {
-    const [paws, setPaws] = useState([]);
+const url = 'http://localhost:3030/jsonstore/paws';
 
-    useEffect(() => {
-        pawService.getAll()
-            .then(setPaws)
-    }, []);
+const [pending, paws] = useFetch(url, [])
     
    return (
         <div className="our-products">
