@@ -11,6 +11,7 @@ import PawsCreate from './components/paws-create/PawsCreate'
 import PawsEdit from './components/paws-edit/PawsEdit'
 import PawsDetails from './components/paws-details/PawsDetails'
 import PawsList from './components/paws-list/PawsList'
+import About from './components/about/About'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
 				<Route path='/paws/:pawId/details' element={<PawsDetails />} />
 				<Route path='/paws/:pawId/edit' element={<PawsEdit />} />
 				<Route path='/paws' element={<PawsList />} />
+				<Route path='/about' element={<About />} />
 			</Routes>
 
 			<Footer />

@@ -597,6 +597,7 @@ section#tables {
 /*--pages--*/
 /*--about--*/
 .about-pg{
+	background-color: rgb(218, 206, 206);
 	border-top: 3px solid rgb(255, 192, 203);
 	padding: 3em 0em 3em;
 }
@@ -679,6 +680,7 @@ li.text-ul h4 {
 	font-weight: 400;
 }
 .test-our {
+	background-color: rgb(218, 206, 206);
 	  padding: 0em 0em 5em;
 }
 .testmonials h3 {
