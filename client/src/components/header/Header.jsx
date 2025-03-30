@@ -1,6 +1,11 @@
-import { Link } from 'react-router'
+import { useContext } from 'react';
+import { Link } from 'react-router';
+
+import UserContext from '../../contexts/UserContext';
 
 export default function Header() {
+    const { email } = useContext(UserContext);
+
     return (
         <div className="banner-background">
             <div className="container">
@@ -32,6 +37,7 @@ export default function Header() {
                                     <li><Link to="/register">REGISTER</Link></li>
                                     <li><Link to="/logout">LOGOUT</Link></li>
                                 </ul>
+                                <h2>{email}</h2>
                             </div>
                             <div className="clearfix"></div>
                             <div className="clearfix"></div>

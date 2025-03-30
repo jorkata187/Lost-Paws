@@ -12,6 +12,8 @@ export default function useFetch(url, defaultState = {}) {
             .then(res => res.json())
             .then(result => {
                 setState(Object.values(result));
+            })
+            .finally(() => {
                 setPending(false);
             })
 

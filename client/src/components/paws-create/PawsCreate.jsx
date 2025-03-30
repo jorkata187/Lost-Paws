@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router";
+import { useContext } from "react";
 
+import UserContext from "../../contexts/UserContext";
 import pawService from "../../services/pawService";
 
 export default function PawsCreate() {
+    const { email } = useContext(UserContext);
     const navigate = useNavigate();
 
     const submitAction = async (formData) => {

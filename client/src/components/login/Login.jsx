@@ -1,9 +1,34 @@
-import { Link } from 'react-router';
+import { useContext, useActionState } from 'react';
+import { Link, useNavigate } from 'react-router';
+
+import UserContext from '../../contexts/UserContext';
+import request from '../../utils/request';
 
 export default function Login() {
+    const { userLoginHandler } = useContext(UserContext);
+
+    const navigate = useNavigate();
+
+    const loginHandler = async (previousState, formData) => {
+        const values = Object.fromEntries(formData);
+
+        const email = values.email;
+        const password = values.password;
+
+        await request.post('http://localhost:3030/jsonstore/users', { email, password });
+
+        userLoginHandler(email);
+
+        navigate('/');
+
+        return values;
+    };
+
+    const [values, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' });
+
     return (
         <section id="login-page" className="auth">
-            <form id="login">
+            <form id="login" action={loginAction}>
 
                 <div className="container">
                     <h1>Login</h1>
@@ -12,7 +37,7 @@ export default function Login() {
 
                     <label htmlFor="login-pass">Password:</label>
                     <input type="password" id="login-password" name="password" />
-                    <input type="submit" className="btn submit" value="Login" />
+                    <input type="submit" className="btn submit" value="Login" disabled={isPending}/>
                     <p className="field">
                         <span>Don't have profile click <Link to="/register">here</Link></span>
                     </p>

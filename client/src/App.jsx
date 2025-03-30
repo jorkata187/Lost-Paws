@@ -1,6 +1,9 @@
 import { Routes, Route } from 'react-router'
+import { useState } from 'react';
 
 import './App.css'
+
+import UserContext from './contexts/UserContext';
 
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
@@ -14,9 +17,13 @@ import PawsList from './components/paws-list/PawsList'
 import About from './components/about/About'
 
 function App() {
+	const [email, setEmail] = useState('');
 
+	const userLoginHandler = (email) => {
+		setEmail(email);
+	}
 	return (
-		<>
+		<UserContext.Provider value={{userLoginHandler, email}}>
 			<Header />
 
 			<Routes>
@@ -31,7 +38,7 @@ function App() {
 			</Routes>
 
 			<Footer />
-		</>
+		</UserContext.Provider>
 	)
 }
 

@@ -12,10 +12,7 @@ const [pending, paws] = useFetch(url, [])
             <div className="products-gallery">
                 <h2>MISSING PAWS</h2>
 
-            {paws.length > 0
-                ?  paws.map(paw => <PawListItem key={paw._id} {...paw} />)
-                : <h3 className="empty-list">Empty list of Paws</h3>
-            }
+            {pending ? <h1>Loading...</h1> : paws.length > 0 ? paws.map(paw => <PawListItem key={paw._id} {...paw} />) : <h3 className="empty-list">Empty list of Paws</h3>}
 
                 <div className="clearfix"></div>
             </div>
