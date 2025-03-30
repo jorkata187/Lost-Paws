@@ -15,9 +15,9 @@ export default function Login() {
         const email = values.email;
         const password = values.password;
 
-        await request.post('http://localhost:3030/jsonstore/users', { email, password });
+        const userData = await request.post('http://localhost:3030/users/login', { email, password });
 
-        userLoginHandler(email);
+        userLoginHandler(userData);
 
         navigate('/');
 

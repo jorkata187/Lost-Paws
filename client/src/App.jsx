@@ -17,13 +17,13 @@ import PawsList from './components/paws-list/PawsList'
 import About from './components/about/About'
 
 function App() {
-	const [email, setEmail] = useState('');
+	const [userData, setUserData] = useState({});
 
-	const userLoginHandler = (email) => {
-		setEmail(email);
+	const userLoginHandler = (data) => {
+		setUserData(data);
 	}
 	return (
-		<UserContext.Provider value={{userLoginHandler, email}}>
+		<UserContext.Provider value={{ ...userData, userLoginHandler}}>
 			<Header />
 
 			<Routes>

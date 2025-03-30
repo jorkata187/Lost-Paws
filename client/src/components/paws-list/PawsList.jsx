@@ -4,7 +4,7 @@ import useFetch from "../../hooks/useFetch";
 export default function PawsList() {
 const url = 'http://localhost:3030/jsonstore/paws';
 
-const [pending, paws] = useFetch(url, [])
+const [pending, paws] = useFetch(url, []);
     
    return (
         <div className="our-products">
