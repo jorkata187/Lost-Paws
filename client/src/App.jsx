@@ -15,21 +15,28 @@ import PawsEdit from './components/paws-edit/PawsEdit'
 import PawsDetails from './components/paws-details/PawsDetails'
 import PawsList from './components/paws-list/PawsList'
 import About from './components/about/About'
+import Logout from './components/logout/Logout';
 
 function App() {
 	const [userData, setUserData] = useState({});
 
 	const userLoginHandler = (data) => {
 		setUserData(data);
-	}
+	};
+
+	const userLogoutHandler = () => {
+		setUserData({});
+	};
+
 	return (
-		<UserContext.Provider value={{ ...userData, userLoginHandler}}>
+		<UserContext.Provider value={{ ...userData, userLoginHandler, userLogoutHandler }}>
 			<Header />
 
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Register />} />
+				<Route path='/logout' element={<Logout />} />
 				<Route path='/paws/create' element={<PawsCreate />} />
 				<Route path='/paws/:pawId/details' element={<PawsDetails />} />
 				<Route path='/paws/:pawId/edit' element={<PawsEdit />} />

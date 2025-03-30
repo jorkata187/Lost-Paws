@@ -5,6 +5,7 @@ const UserContext = createContext({
     email: '',
     accessToken: '',
     userLoginHandler() {},
+    userLogoutHandler() {},
 });
 
 export default UserContext;
