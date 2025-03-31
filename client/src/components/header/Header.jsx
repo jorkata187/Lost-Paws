@@ -32,13 +32,21 @@ export default function Header() {
                                             <li><Link to="#">Something else here</Link></li>
                                         </ul>
                                     </li>
-                                    <li><Link to="/paws/create">CREATE POST</Link></li>
-                                    <li><Link to="/login">LOGIN</Link></li>
-                                    <li><Link to="/register">REGISTER</Link></li>
-                                    <li><Link to="/logout">LOGOUT</Link></li>
+                                    { email && (
+                                        <li><Link to="/paws/create">CREATE POST</Link></li>   
+                                    )}
+                                    { email && (
+                                        <li><Link to="/logout">LOGOUT</Link></li>
+                                    )}
+                                    { !email && (
+                                        <li><Link to="/login">LOGIN</Link></li>
+                                    )}
+                                    { !email && (
+                                        <li><Link to="/register">REGISTER</Link></li>
+                                    )}
                                 </ul>
-                                <h2>{email}</h2>
                             </div>
+                                <h2>{email}</h2>
                             <div className="clearfix"></div>
                             <div className="clearfix"></div>
                         </nav>

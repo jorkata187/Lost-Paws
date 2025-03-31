@@ -19,7 +19,7 @@ body{
 }
 .nav-back {
 	background-color: #fff;
-	padding: 0px 50px 0px 50px;
+	padding: 0px 10px 0px 50px;
 }
 .banner-slider {
 	padding-bottom: 50px;
@@ -29,6 +29,8 @@ body{
 	border: none !important;
 	min-height: 90px;
 	margin-bottom: 0;
+	
+	padding: 0px 9% 0% 6%;
 }
 .navbar-collapse {
 	padding: 0 !important;
@@ -1014,6 +1016,7 @@ li.text-ul h4 {
 	.nav-back {
 		background-color: #fff;
 		padding: 0px 30px 0px 29px;
+		text-align: center;
 	}
 	.carousel-caption.ch h3 {
 		font-size: 1.4em !important;
