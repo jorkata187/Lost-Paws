@@ -8,10 +8,10 @@ export default function Logout() {
     const { accessToken, userLogoutHandler } = useContext(UserContext);
 
     useEffect(() => {
-        if(!accessToken) {
+        if (!accessToken) {
             return;
         };
-        
+
         const options = {
             headers: {
                 'X-Authorization': accessToken,
@@ -23,5 +23,5 @@ export default function Logout() {
             })
     }, [accessToken, userLogoutHandler]);
 
-    return  <Navigate to='/' />
+    return <Navigate to='/' />
 }
