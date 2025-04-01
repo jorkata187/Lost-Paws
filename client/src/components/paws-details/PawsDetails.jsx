@@ -1,12 +1,12 @@
 import { Link, useNavigate, useParams } from "react-router";
 
-import pawService from "../../services/pawService";
-import { useGetOnePaw } from "../../api/pawApi";
+import { useDeletePaw, useGetOnePaw } from "../../api/pawApi";
 
 export default function PawsDetails() {
     const navigate = useNavigate();
     const { pawId } = useParams();
     const { paw } = useGetOnePaw(pawId);
+    const {remove} = useDeletePaw();
 
     const onDelete = async () => {
         const hasConfirm = confirm(`Are you sure want to delete ${paw.name}`);
@@ -14,7 +14,7 @@ export default function PawsDetails() {
         if (!hasConfirm) {
             return;
         }
-        await pawService.delete(pawId);
+        await remove(pawId);
 
         navigate('/paws');
     };

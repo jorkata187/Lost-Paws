@@ -5,18 +5,6 @@ import UserContext from "../contexts/UserContext";
 
 const baseUrl = 'http://localhost:3030/data/paws';
 
-export default {
-    edit(pawId, pawData) {
-        return request.put(`${baseUrl}/${pawId}`, { ...pawData, _id: pawId });
-    },
-    delete(pawId) {
-        return request.delete(`${baseUrl}/${pawId}`);
-    },
-};
-
-
-
-
 export const useCreatePaw = () => {
     const { accessToken } = useContext(UserContext);
 
@@ -45,3 +33,36 @@ export const useGetOnePaw = (pawId) => {
         paw,
     };
 };
+
+export const useEditPaw = () => {
+    const { accessToken } = useContext(UserContext);
+
+    const options = {
+        headers: {
+            'X-Authorization': accessToken,
+        }
+    };
+    const edit = (pawId, pawData) =>
+        request.put(`${baseUrl}/${pawId}`, { ...pawData, _id: pawId }, options);
+
+    return {
+        edit,
+    }
+};
+
+export const useDeletePaw = () => {
+    const { accessToken } = useContext(UserContext);
+
+    const options = {
+        headers: {
+            'X-Authorization': accessToken,
+        }
+    };
+    const remove = (pawId) =>
+        request.delete(`${baseUrl}/${pawId}`, {}, options);
+
+    return {
+        remove,
+    }
+};
+
