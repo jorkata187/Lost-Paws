@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import request from "../utils/request";
 import UserContext from "../contexts/UserContext";
@@ -6,9 +6,6 @@ import UserContext from "../contexts/UserContext";
 const baseUrl = 'http://localhost:3030/data/paws';
 
 export default {
-    getOne(pawId) {
-        return request.get(`${baseUrl}/${pawId}`);
-    },
     edit(pawId, pawData) {
         return request.put(`${baseUrl}/${pawId}`, { ...pawData, _id: pawId });
     },
@@ -16,6 +13,7 @@ export default {
         return request.delete(`${baseUrl}/${pawId}`);
     },
 };
+
 
 
 
@@ -33,4 +31,17 @@ export const useCreatePaw = () => {
     return {
         create
     }
-}
+};
+
+export const useGetOnePaw = (pawId) => {
+    const [paw, setPaw] = useState({});
+
+    useEffect(() => {
+        request.get(`${baseUrl}/${pawId}`)
+            .then(setPaw);
+    }, [pawId]);
+
+    return {
+        paw,
+    };
+};

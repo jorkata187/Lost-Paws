@@ -1,17 +1,12 @@
-import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 
 import pawService from "../../services/pawService";
+import { useGetOnePaw } from "../../api/pawApi";
 
 export default function PawsDetails() {
     const navigate = useNavigate();
-    const [paw, setPaw] = useState({});
     const { pawId } = useParams();
-
-    useEffect(() => {
-        pawService.getOne(pawId)
-            .then(setPaw)
-    }, [pawId]);
+    const { paw } = useGetOnePaw(pawId);
 
     const onDelete = async () => {
         const hasConfirm = confirm(`Are you sure want to delete ${paw.name}`);
@@ -20,7 +15,7 @@ export default function PawsDetails() {
             return;
         }
         await pawService.delete(pawId);
-        
+
         navigate('/paws');
     };
 
@@ -41,9 +36,9 @@ export default function PawsDetails() {
                 {/* <!-- Edit/Delete buttons ( Only for creator of this post )  --> */}
                 <div className="buttons">
                     <Link to={`/paws/${pawId}/edit`} className="button">Edit</Link>
-                    <button 
-                    onClick={onDelete}
-                    className="button"
+                    <button
+                        onClick={onDelete}
+                        className="button"
                     >
                         Delete
                     </button>
