@@ -10,9 +10,9 @@ export default function useFetch(url, defaultState = {}) {
 
         fetch(url, { signal: abortController.signal })
             .then(res => res.json())
-            .then(result => {
-                setState(Object.values(result));
-            })
+            .then(result => 
+                setState(result)
+            )
             .finally(() => {
                 setPending(false);
             })

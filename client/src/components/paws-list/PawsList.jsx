@@ -2,7 +2,7 @@ import PawListItem from "./paw-list-item/PawListItem";
 import useFetch from "../../hooks/useFetch";
 
 export default function PawsList() {
-const url = 'http://localhost:3030/jsonstore/paws';
+const url = 'http://localhost:3030/data/paws';
 
 const [pending, paws] = useFetch(url, []);
     
