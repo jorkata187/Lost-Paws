@@ -5,6 +5,22 @@ import UserContext from "../contexts/UserContext";
 
 const baseUrl = 'http://localhost:3030/data/paws';
 
+// export const useLatestPaws = () => {
+//     const [latestPaws, setLatestPaws] = useState([]);
+
+//     useEffect(() => {
+//         const searchParams = new URLSearchParams({
+//             sortBy: '_createdOn desc',
+//             pageSize: 3,
+//         });
+
+//         request.get(`${baseUrl}?${searchParams.toString()}`)
+//             .then(setLatestPaws)
+//     }, []);
+
+//     return { latestPaws };
+// };
+
 export const useCreatePaw = () => {
     const { accessToken } = useContext(UserContext);
 

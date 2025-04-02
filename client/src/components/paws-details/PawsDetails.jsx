@@ -1,12 +1,17 @@
 import { Link, useNavigate, useParams } from "react-router";
+import { useContext } from "react";
 
 import { useDeletePaw, useGetOnePaw } from "../../api/pawApi";
+import UserContext from "../../contexts/UserContext";
 
 export default function PawsDetails() {
     const navigate = useNavigate();
     const { pawId } = useParams();
     const { paw } = useGetOnePaw(pawId);
-    const {remove} = useDeletePaw();
+    const { remove } = useDeletePaw();
+    const { _id: userId } = useContext(UserContext);
+
+    const isOwner = userId === paw._ownerId;
 
     const onDelete = async () => {
         const hasConfirm = confirm(`Are you sure want to delete ${paw.name}`);
@@ -34,15 +39,17 @@ export default function PawsDetails() {
                 <p className="text">{paw.summary}</p>
 
                 {/* <!-- Edit/Delete buttons ( Only for creator of this post )  --> */}
-                <div className="buttons">
-                    <Link to={`/paws/${pawId}/edit`} className="button">Edit</Link>
-                    <button
-                        onClick={onDelete}
-                        className="button"
-                    >
-                        Delete
-                    </button>
-                </div>
+                {isOwner && (
+                    <div className="buttons">
+                        <Link to={`/paws/${pawId}/edit`} className="button">Edit</Link>
+                        <button
+                            onClick={onDelete}
+                            className="button"
+                        >
+                            Delete
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
