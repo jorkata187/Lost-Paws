@@ -17,8 +17,22 @@ export default function Register() {
         const password = values.password;
         const repassword = values.repassword;
 
+        if(!email) {
+            alert('Email is required!');
+            return;
+        }
+        if(password.length < 3) {
+            alert('Password shoud be at least three characters!');
+            return;
+        }
+
+        if(!password || !repassword) {
+            alert('Password and re-password are required!');
+            return;
+        }
+
         if (password !== repassword) {
-            alert('Passwords mismatch!');
+            alert('Password mismatch!');
             return;
         };
 

@@ -21,6 +21,10 @@ const request = async (method, url, data, options = {}) => {
         return;
     };
 
+    if(response.status === 403) {
+        alert('Email or password is incorrect!');
+    }
+
     const result = await response.json();
 
     return result;

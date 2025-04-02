@@ -15,6 +15,10 @@ export default function Login() {
         const email = values.email;
         const password = values.password;
 
+        if(!email || !password) {
+            return alert('Email and password are required!')
+        };
+
         const userData = await request.post('http://localhost:3030/users/login', { email, password });
 
         userLoginHandler(userData);
