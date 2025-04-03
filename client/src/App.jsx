@@ -16,6 +16,7 @@ import PawsDetails from './components/paws-details/PawsDetails'
 import PawsList from './components/paws-list/PawsList'
 import About from './components/about/About'
 import Logout from './components/logout/Logout';
+import ErrorPage from './components/404/ErrorPage';
 
 function App() {
 	const [userData, setUserData] = useState({});
@@ -42,6 +43,7 @@ function App() {
 				<Route path='/paws/:pawId/edit' element={<PawsEdit />} />
 				<Route path='/paws' element={<PawsList />} />
 				<Route path='/about' element={<About />} />
+				<Route path='*' element={<ErrorPage />} />
 			</Routes>
 
 			<Footer />
