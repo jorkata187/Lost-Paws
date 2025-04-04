@@ -1,3 +1,5 @@
+import {Link} from'react-router'
+
 export default function Footer() {
     return (
         <div className="footer">
@@ -7,10 +9,10 @@ export default function Footer() {
                         <div className="about">
                             <h4>ABOUT</h4>
                             <ul>
-                                <li><a href="about.html">Company Info</a></li>
-                                <li><a href="#">Sollution</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="about.html">Team</a></li>
+                                <li><Link href="/about">Company Info</Link></li>
+                                <li><Link to="#">Sollution</Link></li>
+                                <li><Link to="#">Services</Link></li>
+                                <li><Link to="#">Team</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -18,9 +20,9 @@ export default function Footer() {
                         <div className="advice">
                             <h4>ADVICE</h4>
                             <ul>
-                                <li><a href="#">Faqs</a></li>
-                                <li><a href="#">Accounts</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><Link to="#">Faqs</Link></li>
+                                <li><Link to="#">Accounts</Link></li>
+                                <li><Link href="#">Contact</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -28,8 +30,8 @@ export default function Footer() {
                         <div className="join-in">
                             <h4>JOIN IN</h4>
                             <ul>
-                                <li><a href="#">Forums</a></li>
-                                <li><a href="#">Promotions</a></li>
+                                <li><Link to="#">Forums</Link></li>
+                                <li><Link to="#">Promotions</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -39,11 +41,11 @@ export default function Footer() {
                     <div className="follow-us">
                         <h4>FOLLOW US</h4>
                         <ul>
-                            <li><a href="#" className="fb"></a></li>
-                            <li><a href="#" className="twt"></a></li>
-                            <li><a href="#" className="gpls"></a></li>
-                            <li><a href="#" className="pint"></a></li>
-                            <li><a href="#" className="lnkdin"></a></li>
+                            <li><Link to="#" className="fb"></Link></li>
+                            <li><Link to="#" className="twt"></Link></li>
+                            <li><Link to="#" className="gpls"></Link></li>
+                            <li><Link to="#" className="pint"></Link></li>
+                            <li><Link to="#" className="lnkdin"></Link></li>
                         </ul>
                     </div>
                 </div>
